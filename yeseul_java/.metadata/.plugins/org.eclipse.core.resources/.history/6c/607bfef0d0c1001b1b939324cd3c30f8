@@ -1,0 +1,11 @@
+package com.pmk.carcenterApp.Controller;
+
+import java.util.ArrayList;
+import com.pmk.carcenterApp.model.Customer;
+
+public class CarController {
+	ArrayList<Customer> custList = 
+		new ArrayList<Customer>();
+	
+	
+}

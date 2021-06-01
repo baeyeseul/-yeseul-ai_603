@@ -1,0 +1,47 @@
+package com.pmk.carcenterApp;
+
+import com.pmk.carcenterApp.Controller.CarController;
+import com.pmk.carcenterApp.model.Car;
+import com.pmk.carcenterApp.model.CarModify;
+import com.pmk.carcenterApp.model.Customer;
+import com.pmk.carcenterApp.util.RandData;
+import com.pmk.carcenterApp.view.Menu;
+
+public class CarCenterMain {
+	public static void main(String[] args) {
+		Menu m = new Menu();
+		RandData rand = new RandData();
+		CarController con = new CarController();
+
+		while (true) {
+			switch (m.mainMenu()) {
+			case Menu.MAIN_MENU_ADD:
+				while (true) {
+					int menu = m.addSubMenu();
+					if (menu == Menu.SUB_ADD_RAND) {
+						con.addRandCustData(m.getCount(), rand);
+					}
+					else if (menu == Menu.SUB_ADD_INS) {
+						con.addCustData(m.addManualManu());
+					}
+					else if (menu == Menu.SUB_ADD_EXIT) {
+						break;
+					}
+				}
+				break;
+			case Menu.MAIN_MENU_VIEW:
+				con.viewCustData();
+				break;
+			case Menu.MAIN_MENU_ADMIN:
+				System.out.println("관리자 모드");
+				break;
+			case Menu.MAIN_MENU_EXIT:
+				System.out.println("### 프로그램 종료 ###");
+				System.exit(0);
+			}
+		}
+	}
+
+}
+
+

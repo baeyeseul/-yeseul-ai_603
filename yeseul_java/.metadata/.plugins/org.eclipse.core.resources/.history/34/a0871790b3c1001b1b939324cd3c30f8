@@ -1,0 +1,27 @@
+package com.bys.carcenterApp;
+
+public class CarCenterMain {
+
+	public static void main(String[] args) {
+		Menu m = new Menu();
+		while (true) {
+			switch (m.mainMenu()) {
+			case 1:
+				System.out.println("고객정보 등록하기");
+				break;
+			case 2:
+				System.out.println("고객정보 등록보기");
+				break;
+			case 3:
+				System.out.println("관리자 모드");
+				break;
+			case 4:
+				System.out.println("### 프로그램 종료 ###");
+				System.exit(0);
+				break;
+			}
+		}
+
+	}
+
+}

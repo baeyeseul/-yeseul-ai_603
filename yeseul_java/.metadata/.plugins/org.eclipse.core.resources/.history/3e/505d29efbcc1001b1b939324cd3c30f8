@@ -1,0 +1,42 @@
+package com.bys.carcenterApp;
+
+import com.bys.carcenterApp.veiw.Menu;
+
+public class CarCenterMain {
+
+	public static void main(String[] args) {
+		Menu m = new Menu();
+		while (true) {
+			switch (m.mainMenu()) {
+			case Menu.MAIN_MENU_ADD:
+				System.out.println("고객정보 등록하기");
+				while (true) {
+					switch(m.addSubMenu()) {
+					case Menu.SUB_ADD_RAND:
+						System.out.println("고객정보 랜덤생성");
+						continue;
+					case Menu.SUB_ADD_INS:
+						System.out.println("고객정보 수동입력");
+						continue;
+					case Menu.SUB_ADD_EXIT:
+						System.out.println("메인메뉴 되돌리기");
+						break;
+					}
+					break;
+				}
+			case Menu.MAIN_MENU_VIEW:
+				System.out.println("고객정보 등록보기");
+				break;
+			case Menu.MAIN_MENU_ADMIN:
+				System.out.println("관리자 모드");
+				break;
+			case Menu.MAIN_MENU_EXIT:
+				System.out.println("### 프로그램 종료 ###");
+				System.exit(0);
+				break;
+			}
+		}
+
+	}
+
+}

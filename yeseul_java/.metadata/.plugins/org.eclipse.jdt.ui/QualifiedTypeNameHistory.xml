@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.bys.carcenterApp.model.Customer"/>
+    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.bys.carcenterApp.veiw.Menu"/>
+    <fullyQualifiedTypeName name="com.bys.carcenterApp.Controller.CarController"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.pmk.carcenterApp.util.RandData"/>
+    <fullyQualifiedTypeName name="com.pmk.carcenterApp.Controller.CarController"/>
+    <fullyQualifiedTypeName name="com.pmk.carcenterApp.model.Customer"/>
+    <fullyQualifiedTypeName name="com.pmk.carcenterApp.model.Car"/>
+    <fullyQualifiedTypeName name="com.pmk.carcenterApp.model.CarModify"/>
+</qualifiedTypeNameHistroy>

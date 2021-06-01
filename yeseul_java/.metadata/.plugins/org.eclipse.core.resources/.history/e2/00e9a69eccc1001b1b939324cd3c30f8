@@ -1,0 +1,10 @@
+package com.bys.carcenterApp.Controller;
+
+import java.util.ArrayList;
+
+import com.bys.carcenterApp.model.Customer;
+
+public class CarController {
+	ArrayList<Customer> custList =
+			new ArrayList<Customer>();
+}

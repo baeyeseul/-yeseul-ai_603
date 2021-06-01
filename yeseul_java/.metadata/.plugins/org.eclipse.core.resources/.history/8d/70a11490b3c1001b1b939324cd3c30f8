@@ -1,0 +1,20 @@
+package com.bys.carcenterApp.veiw;
+
+import com.sun.java_cup.internal.runtime.Scanner;
+
+public class Menu {
+	java.util.Scanner s = new Scanner(System.in);
+	
+	public int mainMenu() {
+		System.out.println("-----------------------");
+		System.out.println("카센터 관리 프로그램 v1.0");
+		System.out.println("-----------------------");
+		System.out.println("1.고객정보등록");
+		System.out.println("2.고객정보보기");
+		System.out.println("3.관리자 모드");
+		System.out.println("4.프로그램 종료");
+		System.out.println("-----------------------");
+		System.out.println("메인 메뉴 선택");
+		return s.nextInt();
+	}
+}

@@ -1,0 +1,70 @@
+package com.pmk.carcenterApp;
+
+import com.pmk.carcenterApp.Controller.CarController;
+import com.pmk.carcenterApp.model.Car;
+import com.pmk.carcenterApp.model.CarModify;
+import com.pmk.carcenterApp.model.Customer;
+import com.pmk.carcenterApp.util.Admin;
+import com.pmk.carcenterApp.util.RandData;
+import com.pmk.carcenterApp.view.Menu;
+
+public class CarCenterMain {
+	public static void main(String[] args) {
+		Menu m = new Menu();
+		RandData rand = new RandData();
+		CarController con = new CarController();
+
+		while (true) {
+			switch (m.mainMenu()) {
+			case Menu.MAIN_MENU_ADD:
+				while (true) {
+					int menu = m.addSubMenu();
+					if (menu == Menu.SUB_ADD_RAND) {
+						con.addRandCustData(m.getCount(), rand);
+					}
+					else if (menu == Menu.SUB_ADD_INS) {
+						con.addCustData(m.addManualManu());
+					}
+					else if (menu == Menu.SUB_ADD_EXIT) {
+						break;
+					}
+				}
+				break;
+			case Menu.MAIN_MENU_VIEW:
+				con.viewCustData();
+				break;
+			case Menu.MAIN_MENU_ADMIN:
+				while (true) {
+					String info[] = m.loginAdmin(); 
+					if (info[0].equals(Admin.ADMIN_ID)==false) {
+						System.err.println("잘못된 ID 입니다.");
+						continue;
+					}
+					else if (info[1].equals(Admin.ADMIN_PASSWD)==false) {
+						System.err.println("잘못된 PASSWD 입니다.");
+						continue;
+					}
+					else break;
+				}
+				
+				for(;;) {
+					int menu = m.adminMenu();
+					if (menu == 1) {
+						System.out.println("일일 매출 합계");
+					}
+					else if (menu == 2) {
+						System.out.println("차량수리 내역보기");
+					}
+					else if (menu == 3) break;
+				}
+				break;
+			case Menu.MAIN_MENU_EXIT:
+				System.out.println("### 프로그램 종료 ###");
+				System.exit(0);
+			}
+		}
+	}
+
+}
+
+

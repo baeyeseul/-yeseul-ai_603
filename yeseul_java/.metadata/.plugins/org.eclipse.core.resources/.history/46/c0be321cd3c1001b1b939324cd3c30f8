@@ -1,0 +1,58 @@
+package com.pmk.carcenterApp;
+
+import com.pmk.carcenterApp.Controller.CarController;
+import com.pmk.carcenterApp.model.Car;
+import com.pmk.carcenterApp.model.CarModify;
+import com.pmk.carcenterApp.model.Customer;
+import com.pmk.carcenterApp.util.RandData;
+import com.pmk.carcenterApp.view.Menu;
+
+public class CarCenterMain {
+	public static void main(String[] args) {
+		Menu m = new Menu();
+		RandData rand = new RandData();
+		CarController con = new CarController();
+		
+		while (true) {
+			switch (m.mainMenu()) {
+			case Menu.MAIN_MENU_ADD:
+				while (true) {
+					int menu = m.addSubMenu();
+					if (menu == Menu.SUB_ADD_RAND) {
+						con.addRandCustData(
+								new Customer(
+										rand.getName(),
+										rand.getTel(),
+										rand.getmCard(),
+										rand.getBirthday(),
+										rand.getEmail(),
+										new Car(rand.getModel(),
+												rand.getYear()),
+										new CarModify(rand.getCause(),
+											rand.getDateIn(),
+											rand.getDateOut(),
+											rand.getPrice())));
+			}						
+						System.out.println("자동 생성");
+					}
+					else if (menu == Menu.SUB_ADD_INS) {
+						System.out.println("수동 입력");
+					}
+					else if (menu == Menu.SUB_ADD_EXIT) {
+						break;
+					}					
+				}
+			case Menu.MAIN_MENU_VIEW:
+				System.out.println("고객정보 등록보기");
+				break;
+			case Menu.MAIN_MENU_ADMIN:
+				System.out.println("관리자 모드");
+				break;
+			case Menu.MAIN_MENU_EXIT:
+				System.out.println("### 프로그램 종료 ###");
+				System.exit(0);
+			}
+		}
+	}
+
+}
